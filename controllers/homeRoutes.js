@@ -6,6 +6,20 @@ router.get('/', async (req, res) => {
     res.render('homepage')
 });
 
+router.get('/signup', (req, res) => {
+    res.render('signup')
+});
+
+router.post('/logout', (req, res) => {
+    if (req.session.logged_in) {
+      req.session.destroy(() => {
+        res.status(204).end();
+      });
+    } else {
+      res.status(404).end();
+    }
+  });
+
 router.get('/submission', async (req, res) => {
     try {
         const submissionData = await Submission.findAll();

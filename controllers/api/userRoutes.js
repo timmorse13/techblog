@@ -8,7 +8,7 @@ router.get('/', async (req, res) => {
 
 router.post('/', async (req, res) => {
       console.log(req.body)
-      Users.create(req.body)
+      User.create(req.body)
 
       .then(response => {
         req.session.save(() => {
