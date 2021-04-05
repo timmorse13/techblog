@@ -1,11 +1,11 @@
 const User = require('./user');
 const Submission = require('./submission');
 
-Submission.belongsToMany(User, {
+Submission.belongsTo(User, {
     foreignKey: 'submission_id'
 })
 
-User.hasOne(Submission, {
+User.hasMany(Submission, {
     foreignKey: 'submission_id'
 })
 
