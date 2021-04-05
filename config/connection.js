@@ -23,4 +23,4 @@ if (process.env.JAWSDB_URL) {
       //this is the port we are on in mysql
       port: 3306,
     }
-  );
+  )};
