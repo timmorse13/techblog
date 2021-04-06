@@ -9,7 +9,7 @@ router.get('/user', async (req, res) => {
     try {
         const userData = await User.findAll();
         const user = userData.map((users) => users.get({ plain: true }));
-        // res.render('users', { user });
+        res.render('user', { user });
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
